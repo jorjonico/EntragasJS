@@ -1,3 +1,4 @@
+//clase del producto con el constructor
 class Producto {
     constructor(nombre = "Predeterminado", genero = "Predeterminado", edad = "Predeterminado", color = "Predeterminado", precio = 1, stock = 1) {
         this.nombre = nombre
@@ -8,7 +9,7 @@ class Producto {
         this.stock = stock
     }
 }
-
+//productos + array de productos
 const producto1 = new Producto("Toro", "Hombre", "Adultos", "negro", 950, 50)
 const producto2 = new Producto("Pantera", "Mujer", "Adultos", "negro", 900, 50)
 const producto3 = new Producto("Leona", "Mujer", "Adultos", "rojo", 900, 50)
@@ -21,6 +22,7 @@ const producto9 = new Producto("Ave", "Unisex", "Niños", "blanco", 500, 50)
 const producto10 = new Producto("Jaguar", "Unisex", "Niños", "negro", 500, 50)
 const productos = [producto1, producto2, producto3, producto4, producto5, producto6, producto7, producto8, producto9, producto10]
 
+//filtro de uscar productos por color
 function buscarProducto(productos) {
     let colorProducto = prompt(`Ingrese un color del protector
 (Negro, Blanco, Rojo, Azul, Rosa, Verde)`).toLowerCase()
@@ -35,7 +37,7 @@ function buscarProducto(productos) {
         });
     }
 }
-
+//filtro de buscar producto por precio, ingresando un valor base
 function buscarProductos(productos) {
     let precio = parseFloat(prompt("Ingrese un precio"))
     let productosBuscados = productos.filter(producto => producto.precio >= precio)
@@ -48,6 +50,7 @@ function buscarProductos(productos) {
         });
     }
 } 
+//metodo sort para ordenar array por precio, - a + || + a -
 function ordenarProductos(productos) {
 
     let metodoOrdenamiento = parseInt(prompt(`Ingrese:
@@ -61,7 +64,7 @@ function ordenarProductos(productos) {
     }
     
 }
-
+//ciclo do/while con las opciones tipo menú y el switch con los distintas opciones o criterios de busqueda
 do {
     respuesta = parseInt(prompt(`Buscar su protector deportivo, ingrese:
 1- Para buscar por color de protector deportivo
