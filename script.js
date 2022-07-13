@@ -25,12 +25,14 @@ function buscarProducto(productos) {
     let colorProducto = prompt(`Ingrese un color del protector
 (Negro, Blanco, Rojo, Azul, Rosa, Verde)`).toLowerCase()
 
-    let productoBuscado = productos.filter ((producto) => producto.color == colorProducto)
-    
-    if((colorProducto == "") || (colorProducto != productos.color)) {
+    const productoBuscado = productos.filter (producto => producto.color === colorProducto)
+
+    if((colorProducto == "") || (productoBuscado.length == 0)) {
     alert("NO existe ese color")
     } else {
-    console.log(productoBuscado)
+        productoBuscado.forEach(producto => {
+            console.log(producto)
+        });
     }
 }
 
@@ -41,7 +43,9 @@ function buscarProductos(productos) {
     if(productosBuscados.length == 0){
         console.log("No hay productos con dichas caracteristicas")
     } else {
-        console.log(productosBuscados)
+        productosBuscados.forEach(producto => {
+            console.log(producto)
+        });
     }
 } 
 function ordenarProductos(productos) {
